@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10241b">
+  <meta name="description" content="ঢাকার রাস্তায় মজার রিকশা ড্রাইভিং গেম — Made by Jisan Mahmud">
+  <title>ঢাকা রিকশা রান | Made by Jisan Mahmud</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-container" aria-label="ঢাকা রিকশা রান গেম">
+    <canvas id="gameCanvas" aria-label="গেমের রাস্তা"></canvas>
+
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">🛺</span><div><strong>ঢাকা রিকশা রান</strong><small>ঢাকার রাস্তায় টিকে থাকো!</small></div></div>
+      <button id="soundBtn" class="icon-btn" aria-label="সাউন্ড চালু বা বন্ধ">🔊</button>
+    </header>
+
+    <section id="hud" aria-live="polite">
+      <div class="hud-item"><small>স্কোর</small><strong id="score">0</strong></div>
+      <div class="hud-item"><small>জীবন</small><strong id="lives">❤️❤️❤️</strong></div>
+      <div class="hud-item"><small>গতি</small><strong><span id="speed">0</span> <small>km/h</small></strong></div>
+      <div class="hud-item"><small>দূরত্ব</small><strong><span id="distance">0</span> মি</strong></div>
+    </section>
+
+    <div id="memePopup" role="status"></div>
+    <div id="roadSign" class="road-sign">ঢাকা মহানগরী</div>
+
+    <section id="startScreen" class="overlay">
+      <div class="poster">
+        <div class="poster-tag">বাংলাদেশি রোড মেম • ARCADE</div>
+        <div class="hero-rickshaw">🛺</div>
+        <h1>ঢাকা রিকশা রান</h1>
+        <p>বাস, গাড়ি আর বাইক এড়িয়ে যত দূর পারো যাও!</p>
+        <div class="feature-row"><span>🇧🇩 বাংলাদেশি ভাইব</span><span>🔊 সাউন্ড</span><span>📱 টাচ কন্ট্রোল</span></div>
+        <button id="startBtn" class="primary-btn">🚦 গেম শুরু করো</button>
+        <p class="help">কিবোর্ড: ← → / A D • গতি: ↑ ↓ / W S<br>মোবাইল: নিচের কন্ট্রোল বা রাস্তার বাম/ডান পাশে ট্যাপ</p>
+      </div>
+    </section>
+
+    <section id="pauseScreen" class="overlay hidden">
+      <div class="dialog"><div class="big-emoji">⏸️</div><h2>গেম থামানো হয়েছে</h2><p>একটু বিশ্রাম নাও, মামা!</p><button id="resumeBtn" class="primary-btn">▶ আবার চালাও</button></div>
+    </section>
+
+    <section id="gameOverScreen" class="overlay hidden">
+      <div class="dialog"><div class="big-emoji">💥</div><h2>গেম ওভার, মামা!</h2><p>স্কোর: <strong id="finalScore">0</strong></p><p>দূরত্ব: <strong id="finalDistance">0</strong> মিটার</p><p id="bestLine">সেরা স্কোর: 0</p><button id="restartBtn" class="primary-btn">🔁 আবার খেলো</button></div>
+    </section>
+
+    <nav id="mobileControls" aria-label="মোবাইল গেম কন্ট্রোল">
+      <button id="btnLeft" aria-label="বামে যাও">◀</button>
+      <button id="btnDown" aria-label="গতি কমাও">▼</button>
+      <button id="btnUp" aria-label="গতি বাড়াও">▲</button>
+      <button id="btnRight" aria-label="ডানে যাও">▶</button>
+    </nav>
+
+    <button id="pauseBtn" class="pause-btn hidden" aria-label="গেম থামাও">Ⅱ</button>
+    <footer class="footer"><span>Made by <b>Jisan Mahmud</b></span><a href="https://jisanmahmud759-lab.github.io/Jisan-Mahmud/#about" target="_blank" rel="noopener">Portfolio ↗</a></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
